@@ -83,7 +83,7 @@ elif selected == 'Heart Disease Prediction':
         predict_disease(models['heart_disease'], data, 'Heart Disease')
 
 elif selected == 'Parkinsons Prediction':
-    st.markdown('<h1 class="main-title">Parkinsons Prediction</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-title">Parkinson\'s Prediction</h1>', unsafe_allow_html=True)
     st.write("Enter the following details to predict Parkinson's disease:")
 
     data = [
@@ -117,7 +117,11 @@ elif selected == 'Hypo-Thyroid Prediction':
     data = [
         display_input('Age', 'age'),
         display_input('Sex (1 = Male; 0 = Female)', 'sex'),
-        display_input('On Thyroxine (1 = Yes; 0 = No)', 'on_thyroxine')
+        display_input('On Thyroxine (1 = Yes; 0 = No)', 'on_thyroxine'),
+        display_input('TSH Level', 'TSH'),
+        display_input('T3 Level', 'T3'),
+        display_input('TT4 Level', 'TT4'),
+        display_input('T4U Level', 'T4U')
     ]
 
     if st.button('Predict Hypo-Thyroid'):
