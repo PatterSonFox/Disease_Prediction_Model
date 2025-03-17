@@ -9,8 +9,8 @@ st.set_page_config(page_title="Disease Prediction", page_icon="⚕️")
 st.markdown("""
     <style>
     body {background-color: #F0F2F6;}
-    .main-title {color: #4CAF50; text-align: center; font-size: 36px; margin-top: 20px;}
-    .subtitle {color: #2196F3; text-align: center; font-size: 24px;}
+    .main-title {color: #4CAF50; text-align: center; font-size: 40px; font-weight: bold; text-shadow: 2px 2px #D0D0D0; margin-top: 20px;}
+    .subtitle {color: #2196F3; text-align: center; font-size: 28px; font-weight: bold; text-shadow: 1px 1px #D0D0D0;}
     .stButton>button {width: 100%; background-color: #4CAF50; color: white; border-radius: 10px; border: none; padding: 10px;}
     .stButton>button:hover {background-color: #45a049;}
     .input-container {border: 1px solid #ddd; padding: 10px; border-radius: 10px; margin-bottom: 10px; background-color: #ffffff;}
@@ -76,7 +76,11 @@ elif selected == 'Heart Disease Prediction':
         display_input('Fasting Blood Sugar (> 120 mg/dl)', 'fbs'),
         display_input('Resting ECG Results', 'restecg'),
         display_input('Max Heart Rate Achieved', 'thalach'),
-        display_input('Exercise Induced Angina (1 = Yes; 0 = No)', 'exang')
+        display_input('Exercise Induced Angina (1 = Yes; 0 = No)', 'exang'),
+        display_input('Oldpeak', 'oldpeak'),
+        display_input('Slope of peak exercise ST segment', 'slope'),
+        display_input('Number of major vessels colored by fluoroscopy', 'ca'),
+        display_input('Thalassemia (0-3)', 'thal')
     ]
 
     if st.button('Predict Heart Disease'):
@@ -87,11 +91,12 @@ elif selected == 'Parkinsons Prediction':
     st.write("Enter the following details to predict Parkinson's disease:")
 
     data = [
-        display_input('MDVP:Fo(Hz)', 'fo'),
-        display_input('MDVP:Fhi(Hz)', 'fhi'),
-        display_input('MDVP:Flo(Hz)', 'flo'),
-        display_input('MDVP:Jitter(%)', 'Jitter_percent'),
-        display_input('MDVP:RAP', 'RAP')
+        display_input(f'{feature}', feature) for feature in [
+            'MDVP:Fo(Hz)', 'MDVP:Fhi(Hz)', 'MDVP:Flo(Hz)', 'MDVP:Jitter(%)', 'MDVP:Jitter(Abs)',
+            'MDVP:RAP', 'MDVP:PPQ', 'Jitter:DDP', 'MDVP:Shimmer', 'MDVP:Shimmer(dB)',
+            'Shimmer:APQ3', 'Shimmer:APQ5', 'MDVP:APQ', 'Shimmer:DDA', 'NHR', 'HNR',
+            'RPDE', 'DFA', 'spread1', 'spread2', 'D2', 'PPE'
+        ]
     ]
 
     if st.button("Predict Parkinson's"):
@@ -102,21 +107,12 @@ elif selected == 'Lung Cancer Prediction':
     st.write("Enter the following details to predict lung cancer:")
 
     data = [
-        display_input('Gender (1 = Male; 0 = Female)', 'GENDER'),
-        display_input('Age', 'AGE'),
-        display_input('Smoking (1 = Yes; 0 = No)', 'SMOKING'),
-        display_input('Yellow Fingers', 'YELLOW_FINGERS'),
-        display_input('Anxiety', 'ANXIETY'),
-        display_input('Peer Pressure', 'PEER_PRESSURE'),
-        display_input('Chronic Disease', 'CHRONIC_DISEASE'),
-        display_input('Fatigue', 'FATIGUE'),
-        display_input('Allergy', 'ALLERGY'),
-        display_input('Wheezing', 'WHEEZING'),
-        display_input('Alcohol Consuming', 'ALCOHOL_CONSUMING'),
-        display_input('Coughing', 'COUGHING'),
-        display_input('Shortness of Breath', 'SHORTNESS_OF_BREATH'),
-        display_input('Swallowing Difficulty', 'SWALLOWING_DIFFICULTY'),
-        display_input('Chest Pain', 'CHEST_PAIN')
+        display_input(feature, feature) for feature in [
+            'Age', 'Gender', 'Smoking', 'Yellow fingers', 'Anxiety',
+            'Peer Pressure', 'Chronic Disease', 'Fatigue', 'Allergy',
+            'Wheezing', 'Alcohol Consumption', 'Coughing', 'Shortness of Breath',
+            'Swallowing Difficulty', 'Chest Pain'
+        ]
     ]
 
     if st.button("Predict Lung Cancer"):
@@ -130,10 +126,10 @@ elif selected == 'Hypo-Thyroid Prediction':
         display_input('Age', 'age'),
         display_input('Sex (1 = Male; 0 = Female)', 'sex'),
         display_input('On Thyroxine (1 = Yes; 0 = No)', 'on_thyroxine'),
-        display_input('TSH Level', 'tsh'),
-        display_input('T3 Level', 't3'),
-        display_input('TT4 Level', 'tt4'),
-        display_input('T4U Level', 't4u')
+        display_input('TSH', 'tsh'),
+        display_input('T3', 't3'),
+        display_input('TT4', 'tt4'),
+        display_input('T4U', 't4u')
     ]
 
     if st.button('Predict Hypo-Thyroid'):
