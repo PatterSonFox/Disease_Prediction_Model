@@ -104,7 +104,19 @@ elif selected == 'Lung Cancer Prediction':
     data = [
         display_input('Gender (1 = Male; 0 = Female)', 'GENDER'),
         display_input('Age', 'AGE'),
-        display_input('Smoking (1 = Yes; 0 = No)', 'SMOKING')
+        display_input('Smoking (1 = Yes; 0 = No)', 'SMOKING'),
+        display_input('Yellow Fingers', 'YELLOW_FINGERS'),
+        display_input('Anxiety', 'ANXIETY'),
+        display_input('Peer Pressure', 'PEER_PRESSURE'),
+        display_input('Chronic Disease', 'CHRONIC_DISEASE'),
+        display_input('Fatigue', 'FATIGUE'),
+        display_input('Allergy', 'ALLERGY'),
+        display_input('Wheezing', 'WHEEZING'),
+        display_input('Alcohol Consuming', 'ALCOHOL_CONSUMING'),
+        display_input('Coughing', 'COUGHING'),
+        display_input('Shortness of Breath', 'SHORTNESS_OF_BREATH'),
+        display_input('Swallowing Difficulty', 'SWALLOWING_DIFFICULTY'),
+        display_input('Chest Pain', 'CHEST_PAIN')
     ]
 
     if st.button("Predict Lung Cancer"):
@@ -118,10 +130,10 @@ elif selected == 'Hypo-Thyroid Prediction':
         display_input('Age', 'age'),
         display_input('Sex (1 = Male; 0 = Female)', 'sex'),
         display_input('On Thyroxine (1 = Yes; 0 = No)', 'on_thyroxine'),
-        display_input('TSH Level', 'TSH'),
-        display_input('T3 Level', 'T3'),
-        display_input('TT4 Level', 'TT4'),
-        display_input('T4U Level', 'T4U')
+        display_input('TSH Level', 'tsh'),
+        display_input('T3 Level', 't3'),
+        display_input('TT4 Level', 'tt4'),
+        display_input('T4U Level', 't4u')
     ]
 
     if st.button('Predict Hypo-Thyroid'):
