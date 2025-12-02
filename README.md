@@ -25,14 +25,17 @@ Disease_Prediction_Model/
 Performs dataset cleaning
 Trains classification models (e.g., Logistic Regression, Random Forest)
 Evaluates accuracy, confusion matrix, etc.
+
 2️⃣ Lung Cancer Prediction
 Predicts probability of lung cancer based on medical indicators
 Uses ML classification models
 Includes exploratory data analysis
+
 3️⃣ Parkinson’s Disease Detection
 Uses features like vocal frequency & amplitude
 Trains ML models to classify Parkinson’s vs healthy
 Includes performance evaluation
+
 4️⃣ Thyroid Disease Prediction
 Classification models for thyroid disorders
 Works on structured medical datasets
